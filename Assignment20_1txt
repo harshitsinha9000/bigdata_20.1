@@ -1,0 +1,37 @@
+
+creating customer table with id as a primary key
+
+1)mysql> create table company(id int,company varchar(20),name varchar(20),primary key(id));
+
+
+2)uploading below three rows using scoop command 
+
+
+mysql_data.txt 
+
+
+5,'def','def'
+6,'jhi','jbc'
+7,'dbc','tdi'
+
+
+sqoop export --connect jdbc:mysql://localhost/db1 --username root --table company --update-key id --export-dir mysql_data.txt --update-mode allowinsert  
+
+
+refer screenshot20_1 
+
+
+3)adding below two rows using scoop command 
+
+mysql_data.txt
+
+5,'abc','def'
+8,'abc','jkl'
+
+
+sqoop export --connect jdbc:mysql://localhost/db1 --username root --table company --update-key id --export-dir mysql_data.txt --update-mode allowinsert  
+
+
+result
+
+
